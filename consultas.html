@@ -1,0 +1,315 @@
+<!Doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/consultas.css" type="text/css">
+    <link rel="stylesheet" href="css/menu.css" type="text/css">
+    <link rel="stylesheet" href="node_modules/open-iconic/font/css/open-iconic-bootstrap.min.css">
+    </link>
+
+    <title>Hoteles</title>
+</head>
+
+<body>
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarNavDropdown" aria-label="Toggle navigation" aria-expanded="false">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="menu navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="modal" data-target="#registro">Registrarse</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" data-toggle="modal" data-target="#login">Login</a></li>
+                <li class="nav-item active"><a class="nav-link" href="#">Administración de usuarios</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    
+
+    <ul class="list-unstyled">
+        <div class="navbar busq">
+            <div class="form-busq">
+                <input class="barra-b form-control" placeholder="Nombre de usuario a buscar">
+                <button class="btn btn-primary" type="submit">Buscar</button>
+            </div>
+            <div class="text-b">
+                <small class="text-b">Busqueda</small>
+            </div>
+        </div>
+        <li class="media">
+            <div class="media-left">
+                <img src="https://randomuser.me/api/portraits/men/1.jpg" class="mr-3 rounded-circle" alt="...">
+            </div>
+            <div class="media-body">
+                <h5 class="mt-0 mb-1">José Martinez</h5>
+                <ul class="datos">
+                    <li>Correo: jose@gmail.com</li>
+                    <li>Fecha de nacimiento: 14-10-1999</li>
+                    <li>Sexo: Hombre</li>
+                </ul>
+            </div>
+            <div class="media-rigth">
+                <a href="./detalle.html"><button class="buscar btn btn-primary"><span class="oi oi-magnifying-glass"></span></button></a>
+                <button data-toggle="modal" data-target="#editar" class="btn btn-primary"><span class="oi oi-pencil"></span></button>
+                <button data-toggle="modal" data-target="#borrar" class="btn btn-primary"><span class="oi oi-trash"></span></button>
+            </div>
+        </li>
+        <li class="media">
+            <div class="media-left">
+                <img src="https://randomuser.me/api/portraits/men/50.jpg" class="mr-3 rounded-circle" alt="...">
+            </div>
+            <div class="media-body">
+                <h5 class="mt-0 mb-1">Pedro Smith</h5>
+                <ul class="datos">
+                    <li>Correo: pedro@gmail.com</li>
+                    <li>Fecha de nacimiento: 25-05-1990</li>
+                    <li>Sexo: Hombre</li>
+                </ul>
+            </div>
+            <div class="media-rigth">
+                <a href="./detalle.html"><button class="buscar btn btn-primary"><span class="oi oi-magnifying-glass"></span></button></a>
+                <button data-toggle="modal" data-target="#editar" class="btn btn-primary"><span class="oi oi-pencil"></span></button>
+                <button data-toggle="modal" data-target="#borrar" class="btn btn-primary"><span class="oi oi-trash"></span></button>
+            </div>
+        </li>
+        <li class="media">
+            <div class="media-left">
+                <img src="https://randomuser.me/api/portraits/women/1.jpg" class="mr-3 rounded-circle" alt="...">
+            </div>
+            <div class="media-body">
+                <h5 class="mt-0 mb-1">Iris Rosales</h5>
+                <ul class="datos">
+                    <li>Correo: iris@gmail.com</li>
+                    <li>Fecha de nacimiento: 04-01-1985</li>
+                    <li>Sexo: Mujer</li>
+                </ul>
+            </div>
+            <div class="media-rigth">
+                <a href="./detalle.html"><button class="buscar btn btn-primary"><span class="oi oi-magnifying-glass"></span></button></a>
+                <button data-toggle="modal" data-target="#editar" class="btn btn-primary"><span class="oi oi-pencil"></span></button>
+                <button data-toggle="modal" data-target="#borrar" class="btn btn-primary"><span class="oi oi-trash"></span></button>
+            </div>
+        </li>
+    </ul>
+
+    <!-- Modal Login -->
+    <div class="modal" tabindex="-1" id="login">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Login</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="correo">Correo</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text"><span class="oi oi-person"></span></div>
+                                </div>
+                                <input required type="email" class="form-control" id="correo" placeholder="Correo registrado">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text"><span class="oi oi-key"></span></div>
+                                </div>
+                                <input required type="password" class="form-control" id="password"
+                                    placeholder="Password registrada"></input>
+                            </div>
+                        </div>
+                        <button tydata-toggle="modal" data-target="#borrar"pe="submit" class="btn btn-success">Login</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <div class="form-group">
+                        <small class="form-text text-muted">No tienes cuenta! <a class="navlink" data-toggle="modal"
+                                data-target="#registro" data-dismiss="modal">Registrate aqui</a></small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fin Modal Login -->
+
+    <!-- Modal Registro -->
+    <div class="modal" tabindex="-1" id="registro">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Registrar Usuario</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <input required type="text" class="form-control" id="nombre" placeholder="Nombre o nombres">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input required type="text" class="form-control" id="apellidos" placeholder="Apellidos">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input required type="email" class="form-control" id="correo" placeholder="Tu Correo">
+                        </div>
+                        <div class="form-group">
+                            <input required type="password" class="form-control" id="password" placeholder="Contraseña"></input>
+                        </div>
+                        <div class="form-group">
+                            <input required type="password" class="form-control" id="password2"
+                                placeholder="Confirmar Contraseña"></input>
+                        </div>
+                        <div class="form-group">
+                            <input required type="date" class="form-control" id="fecha_nac"></input>
+                        </div>
+
+                        <fieldset class="form-group">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="op1" id="mujer"
+                                            value="option1" checked>
+                                        <label class="form-check-label" for="op1">Mujer</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="op2" id="hombre"
+                                            value="hombre">
+                                        <label class="form-check-label" for="op2">Hombre</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="urlImg"
+                                placeholder="Url de imagen de perfil"></input>
+                        </div>
+
+                        <button type="submit" class="btn btn-success">Registrar</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <div class="form-group">
+                        <small class="form-text text-muted">Ya tienes cuenta! <a class="navlink" data-toggle="modal"
+                                data-target="#login" data-dismiss="modal">Ingresa aquí</a></small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fin Modal Registro -->
+
+    <!-- Modal Eliminar Usario -->
+    <div class="modal" tabindex="-1" id="borrar">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">¿Desea borrar el usuario?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <form>
+                        <button type="submit" class="btn btn-success">Aceptar</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Fin Modal Eliminar Usario -->
+
+    <!-- Modal Editar Usuario -->
+    <div class="modal" tabindex="-1" id="editar">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Editar Usuario</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <input required type="text" class="form-control" id="nombre" placeholder="Nombre o nombres" value="José">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input required type="text" class="form-control" id="apellidos" placeholder="Apellidos" value="Martinez">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input required type="email" class="form-control" id="correo" placeholder="Tu Correo" value="jose@gmail.com">
+                        </div>
+                        <div class="form-group">
+                            <input required type="password" class="form-control" id="password" placeholder="Contraseña" value="jose123"></input>
+                        </div>
+                        <div class="form-group">
+                            <input required type="date" class="form-control" id="fecha_nac" value="1999-10-14"></input>
+                        </div>
+
+                        <fieldset class="form-group">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="mujer" id="mujer"
+                                            value="mujer">
+                                        <label class="form-check-label" for="gridRadios1">Mujer</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="hombre" id="hombre"
+                                            value="hombre" checked>
+                                        <label class="form-check-label" for="gridRadios2">Hombre</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="urlImg"
+                                placeholder="Url de imagen de perfil" value="https://randomuser.me/api/portraits/men/1.jpg"></input>
+                        </div>
+
+                        <button type="submit" class="btn btn-success">Editar</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fin Modal Registro -->
+
+
+</body>
+
+</html>

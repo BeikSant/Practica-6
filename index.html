@@ -1,0 +1,173 @@
+<!Doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/menu.css" type="text/css">
+    <link rel="stylesheet" href="node_modules/open-iconic/font/css/open-iconic-bootstrap.min.css">
+    </link>
+
+    <title>Hoteles</title>
+</head>
+
+<body>
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarNavDropdown" aria-label="Toggle navigation" aria-expanded="false">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="menu navbar-nav mr-auto">
+                <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="modal" data-target="#registro">Registrarse</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" data-toggle="modal" data-target="#login">Login</a></li>
+                <li class="nav-item"><a class="nav-link" href="./consultas.html">Administración de usuarios</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="jumbotron">
+        <h1 class="display-1">DASW</h1>
+        <p class="lead">Crear una interface web para registro de usuario.</p>
+        <hr class="my-4">
+        <ul>
+            <li>Login</li>
+            <li>Registro</li>
+            <li>Consultas</li>
+        </ul>
+        <a class="btn btn-primary btn-lg" href="consultas.html" role="button">Ir a consultas</a>
+    </div>
+
+    <!-- Modal Login -->
+    <div class="modal" tabindex="-1" id="login">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Login</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="correo">Correo</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text"><span class="oi oi-person"></span></div>
+                                </div>
+                                <input required type="email" class="form-control" id="correo" placeholder="Correo registrado">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text"><span class="oi oi-key"></span></div>
+                                </div>
+                                <input required type="password" class="form-control" id="password"
+                                    placeholder="Password registrada"></input>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-success">Login</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <div class="form-group">
+                        <small class="form-text text-muted">No tienes cuenta! <a class="navlink" data-toggle="modal"
+                                data-target="#registro" data-dismiss="modal">Registrate aqui</a></small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fin Modal Login -->
+
+    <!-- Modal Registro -->
+    <div class="modal" tabindex="-1" id="registro">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Registrar Usuario</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <input required type="text" class="form-control" id="nombre" placeholder="Nombre o nombres">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input required type="text" class="form-control" id="apellidos" placeholder="Apellidos">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input required type="email" class="form-control" id="correo" placeholder="Tu Correo">
+                        </div>
+                        <div class="form-group">
+                            <input required type="password" class="form-control" id="password" placeholder="Contraseña"></input>
+                        </div>
+                        <div class="form-group">
+                            <input required type="password" class="form-control" id="password2"
+                                placeholder="Confirmar Contraseña"></input>
+                        </div>
+                        <div class="form-group">
+                            <input required type="date" class="form-control" id="fecha_nac"></input>
+                        </div>
+
+                        <fieldset class="form-group">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="op1" id="mujer"
+                                            value="mujer" checked>
+                                        <label class="form-check-label" for="op1">Mujer</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="op2" id="hombre"
+                                            value="hombre">
+                                        <label class="form-check-label" for="op2">Hombre</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="urlImg"
+                                placeholder="Url de imagen de perfil"></input>
+                        </div>
+
+                        <button type="submit" class="btn btn-success">Registrar</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <div class="form-group">
+                        <small class="form-text text-muted">Ya tienes cuenta! <a class="navlink" data-toggle="modal"
+                                data-target="#login" data-dismiss="modal">Ingresa aquí</a></small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fin Modal Registro -->
+
+</body>
+
+</html>
